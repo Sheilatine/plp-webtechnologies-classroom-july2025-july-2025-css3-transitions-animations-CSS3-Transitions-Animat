@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS & JavaScript Animation Showcase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Interactive Animation Showcase</h1>
+        <p>Demonstrating CSS animations and JavaScript functions working together</p>
+    </header>
+    
+    <div class="container">
+        <!-- Section 1: CSS Animations -->
+        <section class="animation-demo">
+            <h2>CSS3 Transitions & Animations</h2>
+            <p>These animations are created purely with CSS</p>
+            
+            <div class="demo-container">
+                <h3>Hover Effects</h3>
+                <button class="btn btn-hover">Hover Me</button>
+                <div class="hover-box">Hover over me</div>
+                
+                <h3>Keyframe Animations</h3>
+                <div class="animation-box pulse">Pulse</div>
+                <div class="animation-box spin">Spin</div>
+                <div class="animation-box bounce">Bounce</div>
+            </div>
+        </section>
+        
+        <!-- Section 2: JavaScript Functions -->
+        <section class="js-demo">
+            <h2>JavaScript Functions</h2>
+            <p>Demonstrating parameters, return values, and scope</p>
+            
+            <div class="demo-container">
+                <div class="input-group">
+                    <label for="num1">Enter first number:</label>
+                    <input type="number" id="num1" value="5">
+                </div>
+                
+                <div class="input-group">
+                    <label for="num2">Enter second number:</label>
+                    <input type="number" id="num2" value="3">
+                </div>
+                
+                <button class="btn" onclick="calculate()">Calculate</button>
+                <button class="btn" onclick="changeColor()">Change Color</button>
+                <button class="btn" onclick="resetCalculations()">Reset</button>
+                
+                <div class="output">
+                    <p id="result">Results will appear here</p>
+                    <p id="calculation-count">Calculations performed: 0</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 3: Combined CSS & JavaScript -->
+        <section class="combined-demo">
+            <h2>Combining CSS Animations with JavaScript</h2>
+            <p>Using JavaScript to trigger and control CSS animations</p>
+            
+            <div class="demo-container">
+                <div class="controls">
+                    <button class="btn" onclick="startAnimation('box1', 'slide')">Slide Animation</button>
+                    <button class="btn" onclick="startAnimation('box1', 'pulse')">Pulse Animation</button>
+                    <button class="btn" onclick="startAnimation('box1', 'spin')">Spin Animation</button>
+                    <button class="btn" onclick="resetAnimation('box1')">Reset Animation</button>
+                </div>
+                
+                <div id="box1" class="animatable-box">Animate Me!</div>
+                
+                <div class="card-container">
+                    <div class="card" onclick="flipCard(this)">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h3>Click to Flip</h3>
+                                <p>Front of card</p>
+                            </div>
+                            <div class="card-back">
+                                <h3>Back Side</h3>
+                                <p>You flipped me!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card" onclick="flipCard(this)">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h3>Click to Flip</h3>
+                                <p>Front of card</p>
+                            </div>
+                            <div class="card-back">
+                                <h3>Back Side</h3>
+                                <p>You flipped me!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn" onclick="showModal()">Show Modal</button>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Modal Popup -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Animated Modal</h2>
+            <p>This modal appears with a CSS animation triggered by JavaScript.</p>
+            <button class="btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

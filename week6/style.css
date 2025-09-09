@@ -1,0 +1,340 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    color: #fff;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: colorShift 8s infinite alternate;
+}
+
+h2 {
+    margin: 20px 0 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 8px;
+}
+
+h3 {
+    margin: 15px 0 10px;
+    color: #fdbb2d;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+section {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.demo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Button styles */
+.btn {
+    background: #4a00e0;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+.btn:hover {
+    background: #8e2de2;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+/* Animation classes */
+@keyframes colorShift {
+    0% { color: #ff8a00; }
+    25% { color: #e52e71; }
+    50% { color: #6a11cb; }
+    75% { color: #2575fc; }
+    100% { color: #00c6ff; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+}
+
+/* CSS Animation Section */
+.hover-box {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    margin: 15px 0;
+}
+
+.hover-box:hover {
+    transform: rotate(15deg) scale(1.1);
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-hover {
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.btn-hover:hover {
+    letter-spacing: 2px;
+    padding: 14px 30px;
+}
+
+.animation-box {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+.spin {
+    animation: spin 1.5s linear infinite;
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+/* JavaScript Demo Section */
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.output {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    min-height: 50px;
+    margin-top: 10px;
+}
+
+/* Combined Demo Section */
+.combined-demo {
+    grid-column: 1 / -1;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.animatable-box {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+    border-radius: 10px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.5s ease;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.card {
+    width: 200px;
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card-front {
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+    color: white;
+}
+
+.card-back {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Animation classes for JavaScript to use */
+.slide-animation {
+    animation: slideIn 1s forwards;
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+.spin-animation {
+    animation: spin 1.5s linear;
+}
